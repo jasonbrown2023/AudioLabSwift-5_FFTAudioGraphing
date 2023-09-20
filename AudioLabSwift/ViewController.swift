@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
        
     }
-    
+    var displayImageName = "psuedo"
     // periodically, update the graph with refreshed FFT Data
     func updateGraph(){
         
