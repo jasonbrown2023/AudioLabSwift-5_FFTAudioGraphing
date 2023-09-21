@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17DD2E612ABB9FDD001C5D58 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DD2E602ABB9FDD001C5D58 /* MyTableViewController.swift */; };
 		B65B5A5A24F4409F00E74E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B5A5924F4409F00E74E73 /* AppDelegate.swift */; };
 		B65B5A5C24F4409F00E74E73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B5A5B24F4409F00E74E73 /* SceneDelegate.swift */; };
 		B65B5A5E24F4409F00E74E73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B5A5D24F4409F00E74E73 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17DD2E602ABB9FDD001C5D58 /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		B65B5A5624F4409F00E74E73 /* AudioLabSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioLabSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65B5A5924F4409F00E74E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B65B5A5B24F4409F00E74E73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		B65B5A5824F4409F00E74E73 /* AudioLabSwift */ = {
 			isa = PBXGroup;
 			children = (
+				17DD2E602ABB9FDD001C5D58 /* MyTableViewController.swift */,
 				B65B5A6E24F440D600E74E73 /* Novocaine.h */,
 				B65B5A6F24F440D600E74E73 /* Novocaine.m */,
 				B65B5A7724F444CE00E74E73 /* CircularBuffer.h */,
@@ -178,6 +181,7 @@
 				B65B5A7824F444CE00E74E73 /* CircularBuffer.m in Sources */,
 				B65B5A7324F443A400E74E73 /* AudioFileReader.m in Sources */,
 				B65B5A7024F440D600E74E73 /* Novocaine.m in Sources */,
+				17DD2E612ABB9FDD001C5D58 /* MyTableViewController.swift in Sources */,
 				B65B5A8124F4AAB800E74E73 /* MetalGraph.swift in Sources */,
 				B65B5A5E24F4409F00E74E73 /* ViewController.swift in Sources */,
 				B65B5A5A24F4409F00E74E73 /* AppDelegate.swift in Sources */,
