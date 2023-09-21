@@ -43,6 +43,9 @@ class ViewController: UIViewController {
             graph.addGraph(withName: "time",
                            numPointsInGraph: AudioConstants.AUDIO_BUFFER_SIZE)
             
+            graph.addGraph(withName: "fft2",
+                           numPointsInGraph: AudioConstants.AUDIO_BUFFER_SIZE/10)
+            
             graph.makeGrids() // add grids to graph
         }
         
@@ -84,11 +87,12 @@ class ViewController: UIViewController {
                 data: self.audio.timeData,
                 forKey: "time"
             )
+            graph.updateGraph(
+                data: self.audio.fftData2,
+                forKey: "fft2"
+            )
         }
         
     }
-    
-    
-
 }
 

@@ -17,6 +17,7 @@ class AudioModel {
     // the user can access these arrays at any time and plot them if they like
     var timeData:[Float]
     var fftData:[Float]
+    var fftData2:[Float]
     
     // MARK: Public Methods
     init(buffer_size:Int) {
@@ -24,6 +25,7 @@ class AudioModel {
         // anything not lazily instatntiated should be allocated here
         timeData = Array.init(repeating: 0.0, count: BUFFER_SIZE)
         fftData = Array.init(repeating: 0.0, count: BUFFER_SIZE/2)
+        fftData2 = Array.init(repeating: 0.0, count: BUFFER_SIZE/10)
     }
     
     // public function for starting processing of microphone data
@@ -67,6 +69,11 @@ class AudioModel {
         return FFTHelper.init(fftSize: Int32(BUFFER_SIZE))
     }()
     
+    private lazy var fftHelper2:FFTHelper? = {
+        return FFTHelper.init(fftSize: Int32(BUFFER_SIZE/10))
+    }()
+    
+    
     
     private lazy var inputBuffer:CircularBuffer? = {
         return CircularBuffer.init(numChannels: Int64(self.audioManager!.numInputChannels),
@@ -90,6 +97,9 @@ class AudioModel {
             fftHelper!.performForwardFFT(withData: &timeData,
                                          andCopydBMagnitudeToBuffer: &fftData)
             
+            fftHelper2!.performForwardFFT(withData: &timeData,
+                                         andCopydBMagnitudeToBuffer: &fftData2)
+            
             // at this point, we have saved the data to the arrays:
             //   timeData: the raw audio samples
             //   fftData:  the FFT of those same samples
@@ -105,6 +115,7 @@ class AudioModel {
     private func handleMicrophone (data:Optional<UnsafeMutablePointer<Float>>, numFrames:UInt32, numChannels: UInt32) {
         // copy samples from the microphone into circular buffer
         self.inputBuffer?.addNewFloatData(data, withNumSamples: Int64(numFrames))
+        //printMax(data: Optional<UnsafeMutablePointer<Float>>, numFrames: UInt32, numChannels: UInt32)
         
         
     }
