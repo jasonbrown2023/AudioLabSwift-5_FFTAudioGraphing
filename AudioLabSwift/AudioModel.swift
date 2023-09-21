@@ -50,6 +50,12 @@ class AudioModel {
         }
     }
     
+    func pause(){
+        if let manager = self.audioManager{
+            manager.pause()
+        }
+    }
+    
     
     //==========================================
     // MARK: Private Properties

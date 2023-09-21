@@ -41,10 +41,12 @@ class ViewController: UIViewController {
                             numPointsInGraph: AudioConstants.AUDIO_BUFFER_SIZE/2)
             
             graph.addGraph(withName: "time",
-                           withGain: 0.0, withBias:0.0, numPointsInGraph: AudioConstants.AUDIO_BUFFER_SIZE, showGrid: true)
+                           numPointsInGraph: AudioConstants.AUDIO_BUFFER_SIZE)
             
             graph.makeGrids() // add grids to graph
         }
+        
+        
         
         // start up the audio model here, querying microphone
         audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
@@ -57,6 +59,16 @@ class ViewController: UIViewController {
             self.updateGraph()
         }
        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        [super.viewWillDisappear(animated)];
+        [audio.pause];
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        [super.viewWillAppear(animated)];
+        [audio.play];
     }
     var displayImageName = "psuedo"
     // periodically, update the graph with refreshed FFT Data
